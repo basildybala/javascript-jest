@@ -130,20 +130,166 @@
 // module.exports =reverseStr
 
 // function finSub(str){
-//     let maxLength=0
+
 //     let left=0
 //     let right=0
+//     let maxLength=0
 //     let set=new Set()
+
 //     for(right;right<str.length;right++){
 //         while(set.has(str[right])){
 //             set.delete(str[left])
 //             left++
 //         }
 //         set.add(str[right])
-//         maxLength=Math.max(maxLength,right-left+1)
+//         maxLength =Math.max(maxLength,right-left+1)
+
 //     }
+
 
 //     return maxLength
 // } 
 
-// console.log(finSub("abcbbcbb")); // 3 ("abc")
+//  console.log(finSub("abcbbcbb")); // 3 ("abc") 
+
+//compressString
+// function compressString(s) {
+//   if (!s) return '';
+
+//   let result = '';
+//   let count = 1;
+
+//   for (let i = 1; i <= s.length; i++) {
+//      if(s[i] === s[i-1]){
+//         count ++
+//      }else{
+//         result +=s[i-1]+(count>1?count:'')
+//         count=1
+//      }
+
+//   }
+
+//   return result;
+// }
+// console.log(compressString('aabbccaaa')) 
+
+// //mostFrequentChar
+// function mostFrequentChar(s) {
+//     let map=new Map()
+    
+//     for(let char of s){
+//         map.set(char,(map.get(char)||0)+1)
+//     }
+//     let result =[...map].reduce((acc,cur)=>{
+//         return acc[1]>cur[1]?acc: cur
+//        })
+//     return result[0]
+// }
+
+// console.log(mostFrequentChar('aabbbcccc')) 
+
+//compressString
+// function compressString(s) {
+//   if (!s) return '';
+//     let result=''
+//     let count=1
+
+//     for(let i=1;i<=s.length;i++){
+        
+//         if(s[i] ===s[i-1]){
+//             count++
+//         }else{
+//             console.log(count)
+//             result+=s[i-1]+(count >1?count:'')
+//             count=1
+//         }
+//     }
+
+//   return result;
+// }
+// console.log(compressString('aabbccaaa')) 
+
+// function isRotation(s1, s2) {
+//     let a= s1.length === s2.length && (s1 + s1).includes(s2);
+//     console.log((s1 + s1).includes(s2))
+//     return ""
+// }
+// console.log(isRotation('abc','acb'))
+// function removeWhitespace(s) {
+//     let result=''
+//   for(let char of s){
+//     if(char !== ' ') result+=char
+//   }
+//   return result
+// }
+// console.log(removeWhitespace(' a b c '))
+
+// function toTitleCase(s) {
+//   let result=''
+//   let data=s.split(' ')
+//     for(let i=0;i<data.length;i++){
+//         word=data[i].trim()
+//         if(word){
+//             result +=data[i].charAt(0).toUpperCase()+data[i].slice(1).toLowerCase()
+//             result +=" "
+//         } 
+//     }
+//     return result
+// }
+
+// console.log(toTitleCase('  welcome   to  code '))
+// console.log(toTitleCase('  hello   WORLD  '))
+
+
+// function isAnagram(inp1,inp2){
+//     return inp1.split('').sort().join('') === inp2.split('').sort().join('')
+//     let map =new Map()
+//     for(let char of inp1){
+//         map.set(char,(map.get(char)||0)+1)
+//     }
+//     for(let char of inp2){
+//        if(! map.has(char)) return false
+//        map.set(char,map.get(char)-1)
+//     }
+//     return true
+// }
+
+// console.log(isAnagram('a', 'a'));          // true
+// console.log(isAnagram('anagram', 'nagaram')); // true
+// console.log(isAnagram('rat', 'car'));      // false
+
+// function countWords(s) {
+//  let count=0
+// let data=s.split(' ')
+//     for(let i=0;i<data.length;i++){
+//         let word=data[i].trim()
+//         if(word) count++
+//     }
+//     return count
+// }
+// console.log(countWords("   Hello   world  test  ")); // Expected: 3
+
+
+// function removeCharacter(s, charToRemove) {
+//   let result=''
+//   for(let char of s){
+//     if(char !== charToRemove){
+//         result +=char
+//     }
+//   }
+//   return result
+// }
+
+// console.log(removeCharacter('hello world','l')) 
+
+// function findShortestWord(s) {
+//   let data=s.trim().split(' ')
+//   let shortestWord=data[0]
+//   for(let i=0;i<data.length;i++){
+//     let word=data[i].trim()
+//     if(word && word.length<shortestWord.length) shortestWord=word
+//   }
+//   return shortestWord
+// } 
+// console.log(findShortestWord('jumped over the lazy dog'))
+
