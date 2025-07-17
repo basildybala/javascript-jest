@@ -293,3 +293,143 @@
 // } 
 // console.log(findShortestWord('jumped over the lazy dog'))
 
+// let arr=[,,,] 
+// console.log(arr.length) //3 
+// console.log(arr) //3 empty items
+
+// let arr=[1,5,45,99,25,2]
+// let newArr=arr.sort((a,b)=> a-b)
+// console.log(arr,newArr) //Both array will be sorted
+
+// let array=[1,2,3,4]
+// array.slice(0,array.length)
+// console.log(array)
+
+// let str=' this  is my naAme             harshid   '
+
+// function convertToCapital(str){
+//     if(!str) return
+//     let text=str.split(' ') //splitting to array based on the space
+//     let result=[]
+//     for(let i=0;i<text.length;i++){
+//         let sententce=text[i].trim() //removing extra space
+//         if(sententce){
+//             //firt step => first letter converting to uperCase then adding remain case small letter and adding line space
+//             result.push( sententce.charAt(0).toUpperCase()+sententce.slice(1).toLowerCase() +'\n')
+//         }
+        
+//     }
+//     return result.join('').trim()
+
+// }
+// console.log(convertToCapital(str))
+
+
+// let nums1 = [1,2,3]
+// let nums2 = [2,5,6,1] 
+// let mergeTwoArray=(nums1,nums2)=>{
+//     let mergedArray=[]
+//     let length=nums1.length >nums2.length ?nums1.length:nums2.length
+//     for(let i=0;i<length;i++){
+//         console.log("===nums1[i]=======",nums1[i],mergedArray)
+//         if(nums1[i]) mergedArray.push(nums1[i])
+//         if(nums2[i]) mergedArray.push(nums2[i])
+//     }
+//     return mergedArray
+// }
+// console.log(mergeTwoArray(nums1,nums2))
+
+// Find the max count of consecutive 1’s in an array ?
+// let nums=[1, 1, 0, 1, 1, 1]
+
+// let findConsecutiveNumber=(num)=>{
+//     let count=0
+//     let maxLength=0
+//     console.log(num)
+//     for(let i=0;i<num.length;i++){
+//         if(num[i]===1){
+//             count++
+//         }
+//         else{
+//             console.log(count)
+//             maxLength=maxLength>count?maxLength:count
+//             count=0
+
+//         }
+//     }
+//     // Important: in case array ends with 1s
+//     maxLength=maxLength>count?maxLength:count
+//     return maxLength
+// }
+// console.log(findConsecutiveNumber(nums))
+
+// async function retryUntilSuccess(fn, delay = 2000) {
+//   while (true) {
+//     try {
+//       const result = await fn();
+//       console.log("✅ Success");
+//       return result;
+//     } catch (err) {
+//       console.warn("❌ Failed:", err.message);
+//       await new Promise(res => setTimeout(res, delay));
+//     }
+//   }
+// } 
+// async function callThirdPartyAPI() {
+//   return retryUntilSuccess(async () => {
+//     const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1', {
+//       timeout: 5000, // optional timeout
+//       headers: {
+//         'Content-Type': 'application/json',
+//         // 'Authorization': 'Bearer YOUR_API_KEY' // if needed
+//       }
+//     });
+
+//     if (response.status !== 200) {
+//       throw new Error(`Unexpected status: ${response.status}`);
+//     }
+
+//     return response.data;
+//   }, 3000); // Retry every 3 seconds
+// }  
+
+
+
+// function isAnagram(str1,str2){
+//     if(!str1 || !str2) return false
+//     if(str1.length !== str2.length) return false
+//     let map=new Map()
+//     for (let char of str1){
+//         map.set(char,(map.get(char)|| 0)+1)
+//     }
+//     for (let char of str2){
+//         if(!map.has(char)) return false
+//         map.set(char,map.get(char)-1)
+//     }
+//     return true
+// }
+
+// console.log(isAnagram('asd', 'ads'));          // true
+// // console.log(isAnagram('anagram', 'nagaram')); // true
+// // console.log(isAnagram('rat', 'car'));      // false
+
+// function maxLength(str){
+//     let left=0;
+//     let right=0;
+//     let maxLength=0;
+//     let set =new Set()
+//     for(right;right<str.length;right++){
+//         while(set.has(str[right])){
+//              console.log("WHILEE",str[right])
+//             set.delete(str[left])
+//             left++
+//         }
+       
+//         set.add(str[right])
+//         maxLength=Math.max(maxLength,right-left+1)
+//     }
+//     return maxLength
+// }
+
+//  console.log(maxLength("abcbbcbb")); // 3 ("abc") 
+
