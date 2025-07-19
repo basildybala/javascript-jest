@@ -363,36 +363,6 @@
 // }
 // console.log(findConsecutiveNumber(nums))
 
-// async function retryUntilSuccess(fn, delay = 2000) {
-//   while (true) {
-//     try {
-//       const result = await fn();
-//       console.log("✅ Success");
-//       return result;
-//     } catch (err) {
-//       console.warn("❌ Failed:", err.message);
-//       await new Promise(res => setTimeout(res, delay));
-//     }
-//   }
-// } 
-// async function callThirdPartyAPI() {
-//   return retryUntilSuccess(async () => {
-//     const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1', {
-//       timeout: 5000, // optional timeout
-//       headers: {
-//         'Content-Type': 'application/json',
-//         // 'Authorization': 'Bearer YOUR_API_KEY' // if needed
-//       }
-//     });
-
-//     if (response.status !== 200) {
-//       throw new Error(`Unexpected status: ${response.status}`);
-//     }
-
-//     return response.data;
-//   }, 3000); // Retry every 3 seconds
-// }  
-
 
 
 // function isAnagram(str1,str2){
@@ -413,18 +383,20 @@
 // // console.log(isAnagram('anagram', 'nagaram')); // true
 // // console.log(isAnagram('rat', 'car'));      // false
 
+
+
+
 // function maxLength(str){
 //     let left=0;
 //     let right=0;
 //     let maxLength=0;
-//     let set =new Set()
+//     let set=new Set()
+
 //     for(right;right<str.length;right++){
 //         while(set.has(str[right])){
-//              console.log("WHILEE",str[right])
 //             set.delete(str[left])
 //             left++
 //         }
-       
 //         set.add(str[right])
 //         maxLength=Math.max(maxLength,right-left+1)
 //     }
@@ -433,3 +405,53 @@
 
 //  console.log(maxLength("abcbbcbb")); // 3 ("abc") 
 
+
+
+// function isAnagram(str1,str2){
+//     if(!str1 || !str2) return false
+//     if(str1.length !== str2.length) return false
+//     let map =new Map()
+//     return str1.split('').sort().join() === str2.split('').sort().join()
+//     for (let char of str1){
+//         map.set(char,(map.get(char)||0)+1)
+//     }
+//     for (let char of str2){
+//         if(!map.has(char)) return false
+//         map.set(char,(map.get(char)-1))
+//     }
+//     return true
+// }
+
+// console.log(isAnagram('asd', 'ads'));          // true
+// console.log(isAnagram('anagram', 'nagaram')); // true
+// console.log(isAnagram('rat', 'car'));      // false 
+
+
+function findConsecutiveNumber(nums){
+    let count=1
+    let maxCount=1
+    let result={
+        number:nums[0],
+        nos:1
+    }
+        for (let i = 1; i < nums.length; i++) {
+        if (nums[i] === nums[i - 1]) {
+            count++;
+        } else {
+            count = 1;
+        }
+        if(count>maxCount){
+            maxCount = count;
+            result.number=nums[i]
+            result.nos=count
+       
+        }
+        
+    }
+
+
+    return result
+}
+
+let nums=[1, 1, 0, 1, 1, 1,8,8,8,8,8,14,2]
+ console.log(findConsecutiveNumber(nums))
