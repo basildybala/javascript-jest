@@ -427,31 +427,58 @@
 // console.log(isAnagram('rat', 'car'));      // false 
 
 
-function findConsecutiveNumber(nums){
-    let count=1
-    let maxCount=1
-    let result={
-        number:nums[0],
-        nos:1
-    }
-        for (let i = 1; i < nums.length; i++) {
-        if (nums[i] === nums[i - 1]) {
-            count++;
-        } else {
-            count = 1;
-        }
-        if(count>maxCount){
-            maxCount = count;
-            result.number=nums[i]
-            result.nos=count
+// function findConsecutiveNumber(nums){
+//     let count=1
+//     let maxCount=1
+//     let result={
+//         number:nums[0],
+//         nos:1
+//     }
+//         for (let i = 1; i < nums.length; i++) {
+//         if (nums[i] === nums[i - 1]) {
+//             count++;
+//         } else {
+//             count = 1;
+//         }
+//         if(count>maxCount){
+//             maxCount = count;
+//             result.number=nums[i]
+//             result.nos=count
        
-        }
+//         }
         
+//     }
+
+
+//     return result
+// }
+
+// let nums=[1, 1, 0, 1, 1, 1,8,8,8,8,8,14,2]
+//  console.log(findConsecutiveNumber(nums))
+
+
+//Binary search
+
+let arr=[1,13,21,34,45,52,64,77,89]
+
+function binarySearch(nums,num){
+    let left=0
+    let right=nums.length-1
+    while(left <= right){
+        let middle=Math.floor((left+right)/2)
+        console.log(middle)
+        if(nums[middle]===num){
+
+            console.log(`The element is found in ${middle} position value is ${nums[middle]}`)
+            return "Element found"
+        }else if(nums[middle] > num){
+            
+            right=middle-1
+            console.log("AAAAAA")
+        }else{
+            left=middle+1
+        }
     }
-
-
-    return result
 }
 
-let nums=[1, 1, 0, 1, 1, 1,8,8,8,8,8,14,2]
- console.log(findConsecutiveNumber(nums))
+console.log(binarySearch(arr,13))
