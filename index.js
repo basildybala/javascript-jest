@@ -459,26 +459,26 @@
 
 //Binary search
 
-let arr=[1,13,21,34,45,52,64,77,89]
+// let arr=[1,13,21,34,45,52,64,77,89]
 
-function binarySearch(nums,num){
-    let left=0
-    let right=nums.length-1
-    while(left <= right){
-        let middle=Math.floor((left+right)/2)
-        console.log(middle)
-        if(nums[middle]===num){
+// function binarySearch(nums,num){
+//     let left=0
+//     let right=nums.length-1
+//     while(left <= right){
+//         let middle=Math.floor((left+right)/2)
+//         console.log(middle)
+//         if(nums[middle]===num){
 
-            console.log(`The element is found in ${middle} position value is ${nums[middle]}`)
-            return "Element found"
-        }else if(nums[middle] > num){
+//             console.log(`The element is found in ${middle} position value is ${nums[middle]}`)
+//             return "Element found"
+//         }else if(nums[middle] > num){
             
-            right=middle-1
-            console.log("AAAAAA")
-        }else{
-            left=middle+1
-        }
-    }
-}
+//             right=middle-1
+//             console.log("AAAAAA")
+//         }else{
+//             left=middle+1
+//         }
+//     }
+// }
 
-console.log(binarySearch(arr,13))
+// console.log(binarySearch(arr,13))
