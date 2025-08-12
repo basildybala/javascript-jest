@@ -481,4 +481,73 @@
 //     }
 // }
 
-// console.log(binarySearch(arr,13))
+// console.log(binarySearch(arr,13)) 
+// //findConsecutiveNumber
+// let nums=[1, 1, 0, 1, 1, 1,8,8,8,8,8,14,2]
+//     function findConsecutiveNumber(arr){
+//         let count=1
+//         let maxCount=1
+//         for(let i=0;i<arr.length;i++){
+//             if(arr[i]===arr[i-1]){
+//                 count++
+//             }else{
+//                 count=1
+//             }
+//             maxCount =count >maxCount ?count:maxCount
+//         }
+//          return maxCount
+//     }
+//  console.log(findConsecutiveNumber(nums)) 
+
+
+// function isAnagram(wordOne,wordTwo){
+//     let map =new Map()
+//     for(let char of wordOne){
+//         map.set(char,(map.get(char)||0)+1)
+//     }
+//     for(let char of wordTwo){
+//         if(!map.has(char)) return false
+//         map.set(char,(map.get(char)||0)-1)
+//     }
+//     console.log(map)
+//     return true
+// }
+
+// console.log(isAnagram('asd', 'ads'));          // true
+// console.log(isAnagram('anagram', 'nagaram')); // true
+// console.log(isAnagram('rat', 'car'));      // false  
+
+
+// let str=' this  is my naAme             harshid   '
+// function convertToCapital(str){
+//     let words=str.split(' ')
+//     let result =[]
+//     for(let i=0;i< words.length;i++){
+//         let word =words[i].trim()
+//         if(word){
+//             result.push(word[0].toUpperCase()+word.slice(1).toLowerCase())
+//         }
+//     }
+//     return result.join(' ').trim()
+// }
+
+// console.log(convertToCapital(str)) 
+
+
+
+// function isAnagram(strOne,strTwo){
+//     if(strOne.length !== strTwo.length ) return false
+//     let map=new Map()
+//     for(let char of strOne){
+//        map.set(char,(map.get(char)|| 0)+1) 
+//     }
+//     for(let char of strTwo){
+//         if(!map.has(char)) return false
+//        map.set(char,(map.get(char)|| 0)-1) 
+//     }
+//     return true
+// }
+
+// console.log(isAnagram('asd', 'ads'));          // true
+// console.log(isAnagram('anagram', 'nagaram')); // true
+// console.log(isAnagram('rat', 'car'));      // false  
