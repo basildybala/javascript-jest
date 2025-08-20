@@ -207,7 +207,23 @@
 
 //   return result;
 // }
-// console.log(compressString('aabbccaaa')) 
+
+// function compressString(str){
+//     let count=1
+//     let result=''
+//     for(let i=1;i<str.length;i++){
+//         if(str[i]===str[i-1]){
+//             count++
+//         }else{
+//             result +=str[i-1]+(count>1?count:'')
+//             count=1
+//         }
+//     }
+//     // add the last sequence
+//     result += str[str.length - 1] + (count > 1 ? count : '');
+//     return result
+// }
+// console.log(compressString('aabbccaaajjjj')) 
 
 // function isRotation(s1, s2) {
 //     let a= s1.length === s2.length && (s1 + s1).includes(s2);
@@ -280,7 +296,9 @@
 //   return result
 // }
 
-// console.log(removeCharacter('hello world','l')) 
+
+//  console.log(removeCharacter('hello world','l')) 
+
 
 // function findShortestWord(s) {
 //   let data=s.trim().split(' ')
