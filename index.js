@@ -536,14 +536,14 @@
 
 
 // function isAnagram(strOne,strTwo){
-//     if(strOne.length !== strTwo.length ) return false
+//     if(strOne.length !== strTwo.length) return false
 //     let map=new Map()
 //     for(let char of strOne){
-//        map.set(char,(map.get(char)|| 0)+1) 
+//         map.set(char,(map.get(char)||0)+1)
 //     }
 //     for(let char of strTwo){
 //         if(!map.has(char)) return false
-//        map.set(char,(map.get(char)|| 0)-1) 
+//         map.set(char,(map.get(char)||0)-1)
 //     }
 //     return true
 // }
@@ -551,3 +551,86 @@
 // console.log(isAnagram('asd', 'ads'));          // true
 // console.log(isAnagram('anagram', 'nagaram')); // true
 // console.log(isAnagram('rat', 'car'));      // false  
+
+
+// let nums=[1, 1,1,1, 0, 1, 1, 1,8,8,8,8,14,2,1]
+
+// function findConsecutiveNumber(numbers){
+//     let count =1
+//     let maxCount=1
+//     let result={
+//         num:1,
+//         coun:1
+//     }
+//     for(let i=0;i<numbers.length;i++){
+//         if(numbers[i]===numbers[i-1]){
+//             count++
+//         }else{
+//             count=1
+//         }
+//         if(count>=maxCount){
+//             maxCount=count
+//             result.num=numbers[i]
+//             result.coun=count
+//         }
+//     }
+//     return result
+
+// } 
+// console.log(findConsecutiveNumber(nums))
+
+// let str='hi i am harshid basil'
+
+// function convertToCapital(str){
+//     let words=str.split(' ')
+//     let result=[]
+//     for(let i=0;i<words.length;i++){
+//         let word=words[i]
+//         if(word){
+//            result.push(word.charAt(0).toUpperCase()+word.slice(1).toLowerCase())
+//         }
+//     }
+//     return result.join(' ').trim()
+// }
+// console.log(convertToCapital(str))
+
+// function reverseWords(str){
+//     let words=str.split(' ')
+//     let result =[]
+//     for(let i=words.length-1;i>=0;i--){
+//         result.push(words[i])
+//     }
+//     return result.join(' ')
+// }
+// console.log(reverseWords(str))
+
+// const num=[[1,2],['a','b'],[3,4]]
+
+// function flatArray(num){
+//     let result=[]
+//     for(let i=0;i<num.length;i++){
+//         if(Array.isArray(num[i])){
+//             result = result.concat(flatArray(num[i]))
+//             console.log(result)
+//         }else{
+//             result.push(num[i])
+//         }
+//     }
+//  return result
+// }
+// console.log(flatArray(num))
+
+// let nums=[1,4,5,2,1,1,4,8,4,8,8,8,8]
+// function getLongenstRepeatingNumber(nums){
+//     let map=new Map()
+//     for(let num of nums){
+//         map.set(num,(map.get(num)||0)+1)
+//         console.log(map)
+//     }
+//     let values=[...map.entries()].reduce((acc,val)=>{
+//         return val[1]>acc[1]?val:acc
+//     },[0,0])
+//     return values
+// }
+// console.log(getLongenstRepeatingNumber(nums))
+
