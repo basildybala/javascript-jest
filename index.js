@@ -622,33 +622,66 @@
 // }
 // console.log(reverseWords(str))
 
-// const num=[[1,2],['a','b'],[3,4]]
 
-// function flatArray(num){
+
+// const num=[[1,2],['a','b'],[3,4]]
+// function flatArray(nums){
+//     if(!nums) return "Something went wrong"
 //     let result=[]
-//     for(let i=0;i<num.length;i++){
-//         if(Array.isArray(num[i])){
-//             result = result.concat(flatArray(num[i]))
-//             console.log(result)
+//     for(let i=0;i<nums.length;i++){
+//         if(Array.isArray(nums[i])){
+//             result =result.concat(flatArray(nums[i]))
 //         }else{
-//             result.push(num[i])
+//             result.push(nums[i])
 //         }
 //     }
-//  return result
+//     return result
 // }
 // console.log(flatArray(num))
 
 // let nums=[1,4,5,2,1,1,4,8,4,8,8,8,8]
 // function getLongenstRepeatingNumber(nums){
+//     if(!nums) return "Value should not be empty"
 //     let map=new Map()
 //     for(let num of nums){
 //         map.set(num,(map.get(num)||0)+1)
-//         console.log(map)
 //     }
-//     let values=[...map.entries()].reduce((acc,val)=>{
-//         return val[1]>acc[1]?val:acc
-//     },[0,0])
-//     return values
+//     let result =[...map.entries()].reduce((acc,val)=>{
+//         return acc[1]>=val[1]?acc:val
+//     })
+//     return {number:result[0],count:result[1]}
 // }
 // console.log(getLongenstRepeatingNumber(nums))
 
+// function maxLength(str){
+//     // let left=0;
+//     // let right=0;
+//     // let maxLength=0;
+//     // let set=new Set()
+
+//     // for(right;right<str.length;right++){
+//     //     while(set.has(str[right])){
+//     //         set.delete(str[left])
+//     //         left++
+//     //     }
+//     //     set.add(str[right])
+//     //     maxLength=Math.max(maxLength,right-left+1)
+//     // }
+//     // return maxLength
+//     let left=0
+//     let right=0
+//     let maxLength=0
+//     let set=new Set()
+//     for(right;right<str.length;right++){
+//      while(set.has(str[right])){
+//         set.delete(str[left])
+//         left++
+//      }   
+//      set.add(str[right])
+//      maxLength =Math.max(maxLength,right-left+1)
+
+//     }
+//     return maxLength
+// }
+
+//  console.log(maxLength("abcbbcbb")); // 3 ("abc") 
